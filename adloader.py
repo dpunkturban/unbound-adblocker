@@ -1,6 +1,9 @@
 import urllib.request
 import validators
 import re
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 block_hosts = []
 
