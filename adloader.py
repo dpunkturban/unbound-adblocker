@@ -25,5 +25,5 @@ with open('urllist', 'r') as f:
 
 for key in block_hosts:
     if block_hosts[key] is 1:
-        print('local-zone: "{}" redirect'.format(key))
-        print('local-data: "{} A 0.0.0.0"'.format(key))
+        print(f'local-zone: "{key}" redirect')
+        print(f'local-data: "{key} A 0.0.0.0"')
