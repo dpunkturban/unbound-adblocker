@@ -16,7 +16,7 @@ with open('urllist', 'r') as f:
             for url_line in data.splitlines():
                 url = re.search(URL_REGEX, url_line)
                 if url is not None:
-                    domain = re.search("(?: |//|^)([A-Za-z0-9]{1,}\.[A-Za-z0-9]{1,10}\.?[A-Za-z]{1,}\.?[A-Za-z]{1,})(?: |/|$)", url[0])
+                    domain = re.search(URL_REGEX, url[0])
                     if domain is not None:
                         block_hosts[domain[0]] = 1
         except urllib.error.URLError as e: ResponseData = e.read().decode("utf8", 'ignore')
